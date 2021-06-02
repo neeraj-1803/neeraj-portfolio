@@ -1,0 +1,564 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&family=Open+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Merriweather Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.background video{
+    position: absolute; 
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto; 
+    z-index: -100;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.header{
+    position:fixed;
+    top:0;
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.sticky{
+    background-color: #303030;
+    z-index: 10;
+}
+
+.header ul, .intro-text ul{
+    list-style-type: none;
+    display: flex;
+}
+
+.header ul li a, .intro-text ul li a{
+    padding: 8px 13px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.header ul li a:hover{
+    color: orange;
+}
+
+.highlighted{
+    color: orange;
+}
+
+.intro-text{
+    display: inline-block;
+    color: white;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.intro-text h1{
+    font-size: 90px;
+    font-weight: 600;
+    padding: 0;
+    overflow: hidden;
+    width: 14.5ch;
+    /* border-right: .15em solid orange; */
+    margin: 0 auto;
+    white-space: nowrap;
+    text-align: center;
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 15ch }
+}
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: transparent }
+}
+
+.intro-text h3{
+    color: #A8A8A8;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0px 1px 2px rgb(0 0 0 / 50%);
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.intro-text span{
+    color: white;
+    font-weight: 400;
+}
+
+.intro-text ul{
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.intro-text li{
+    padding: 30px;
+    font-size: 34px;
+}
+
+.intro-text ul li i:hover, .arrow i:hover{
+    cursor: pointer;
+    color: orange;
+}
+
+.arrow{
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    z-index: 3;
+    color: white;
+    font-size: 40px;
+}
+
+.arrow a{
+    text-decoration: none;
+    color: white;
+}
+
+.about-me{
+    position: relative;
+    background-color: #2b2b2b;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-me{
+    margin-top: 60px;
+    margin-left: 130px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.round-img{
+    width: 120px;
+    height: 120px;
+    border: 1px transparent;
+}
+
+.round-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.about-me-main{
+    margin-top: 60px;
+    margin-left: 30px;
+    margin-right: 130px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-desc h2, .contact-det h2, .contact-det h4{
+    color: white;
+    padding-bottom: 10px;
+}
+
+.about-desc p{
+    margin-right: 40px;
+}
+
+.about-desc p, .contact-det p{
+    color: #7a7a7a;
+    line-height: 30px;
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 30px;
+}
+
+.about-contact{
+    display: flex;
+    padding-bottom: 40px;
+}
+
+.resume-download{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.resume-download a{
+    padding: 20px;
+    background-color: #444444;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.resume-download a span{
+    padding-left: 10px;
+}
+
+.resume{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+}
+
+.resume-hdr{
+    width: 20%;
+    padding: 0 20px;
+    justify-self: flex-end;
+}
+
+.resume-hdr h1{
+    color: #313131;
+    display: inline-block;
+    padding-top: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-bottom: 3px solid #11ABB0;
+}
+
+.education, .work, .skills{
+    color: #313131;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.work-wrap{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.ed-detail, .skill-detail{
+    width: 70%;
+}
+
+.ed-detail h1, .work-detail h1{
+    font-size: 24px;
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.ed-detail p, .work-detail p{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #6E7881;
+    padding-bottom: 10px;
+}
+
+.ed-detail h3, .skill-detail p{
+    color: #838C95;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.ed-detail p span, .work-detail p span{
+    font-family: 'Merriweather Sans', sans-serif;
+    padding-left: 5px;
+}
+
+.work-detail{
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.work-detail ul, .skills-row ul{
+    list-style-type: none;
+    padding-right: 50px;
+}
+
+.work-detail ul li{
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+#no-bot-padding{
+    padding-bottom: 0;
+}
+
+.top-padding{
+    padding-top: 20px;
+}
+
+#no-border-bottom{
+    border-bottom: 0;
+}
+
+.skills-row ul{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skills-row ul li{
+    flex: 1 0 20%;
+    height: 80px;
+}
+
+.skills-row ul li a{
+    padding: 10px 25px;
+    background-color: #444444;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.works{
+    background: #ebeeee;
+    padding-top: 90px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.work-list{
+    display: flex;
+    width: 100%;
+    height: 400px;
+    align-content: center;
+    justify-content: center;
+}
+
+.work-row{
+    height: 200px;
+    width: 250px;
+    padding: 20px;
+}
+
+.work-row a img{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay{
+    display: none;
+}
+
+.work-det p{
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #95a3a3;
+    padding-bottom: 20px;
+}
+
+.testimonial-parent{
+    background-image: url('./parallax-img.jpg');
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.testimonials{
+    padding: 70px 120px;
+    color: white;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 24px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    z-index: 2;
+}
+
+.testimonials i{
+    width: 20%;
+    justify-content: flex-end;
+    font-size: 50px;
+}
+
+.testimonial-row .review{
+    padding-bottom: 50px;
+}
+
+.review h5{
+    padding-top: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+.contact-us{
+    background: #191919;
+    padding-top: 96px;
+    padding-bottom: 102px;
+    color: #636363;
+}
+
+.contact-row{
+    display: flex;
+    padding: 0 200px;
+    width: 96%;
+}
+
+.contact-row i{
+    font-size: 80px;
+    color: white;
+    width: 200px;
+}
+
+.contact-row p{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 80px;
+    font-family: 'Merriweather Sans', sans-serif;
+    padding-right: 3%;
+}
+
+.contact-row2{
+    width: 96%;
+    padding: 0 200px;
+    display: flex;
+}
+
+fieldset{
+    margin-top: 20px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+fieldset div{
+    display: flex;
+    /* height: 60px; */
+    margin-bottom: 30px;
+}
+
+fieldset div label{
+    width: 200px;
+}
+
+fieldset span{
+    color: #11ABB0;
+    font-size: 13px;
+}
+
+fieldset div input{
+    padding: 18px 20px;
+    color: #eee;
+    background: #373233;
+    border: 0;
+    outline: none;
+    font-size: 15px;
+    width: 400px;
+}
+
+fieldset div textarea{
+    padding: 18px 20px;
+    color: #eee;
+    background: #373233;
+    border: 0;
+    outline: none;
+    font-size: 15px;
+    height: 100px;
+    width: 400px;
+}
+
+fieldset div button{
+    font-family: 'Merriweather Sans', sans-serif;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-left: 200px;
+    color: #fff;
+    background: #0D0D0D;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    height: 60px;
+}
+
+aside{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+footer{
+    margin-top: -1px;
+    padding-top: 48px;
+    color: #303030;
+    background: #0D0D0D;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-icons ul{
+    display: flex;
+    list-style-type: none;
+    color: #525252;
+    justify-content: center;
+}
+
+.footer-icons ul li{ 
+    padding: 20px;
+    font-size: 30px;
+}
+
+footer p{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer a i{
+    position: absolute;
+    color: white;
+    margin-top: -68px;
+    font-size: 40px;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer i:hover {
+    color: #11ABB0;
+}
