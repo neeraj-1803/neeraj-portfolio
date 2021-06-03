@@ -481,13 +481,17 @@ fieldset span{
 }
 
 fieldset div input{
-    padding: 18px 20px;
+    /* padding: 18px 20px; */
     color: #eee;
-    background: #373233;
     border: 0;
     outline: none;
     font-size: 15px;
     width: 400px;
+}
+
+fieldset div input[type='text'], fieldset div input[type='email']{
+    padding: 18px 20px;
+    background: #373233;
 }
 
 fieldset div textarea{

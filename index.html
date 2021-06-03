@@ -9,6 +9,9 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Neeraj Dwivedi Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-ajax-uploader/2.6.7/SimpleAjaxUploader.min.js"
+        integrity="sha512-sF1OQUX4620btxfaKLxsFeu/euV3FcPyH+uST3mdEjc8vW8R4z1xNiZhcG7wcZQbFkgFhiiBoAyYNMCL3jufPA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -239,7 +242,7 @@
             <p>Get in touch with me!</p>
         </div>
         <div class="contact-row2">
-            <form>
+            <form name="contact-form" data-netlify="true" netlify-honeypot="bot-field" method="POST" action="./success.html">
                 <fieldset>
                     <div>
                         <label>Name <span class="required">*</span></label>
@@ -254,8 +257,12 @@
                         <input type="text" id="contactsubject">
                     </div>
                     <div>
+                        <label>Attachments(if any)</label>
+                        <input type="file" name="attachment" />
+                    </div>
+                    <div>
                         <label>Message <span class="required">*</span></label>
-                        <textarea rows="15"></textarea>
+                        <textarea rows="15" id="contactmsg"></textarea>
                     </div>
                     <div>
                         <button>Submit</button>
@@ -286,18 +293,35 @@
         <p>Made by Neeraj Dwivedi</p>
     </footer>
     <script>
+        // document.querySelector("form").addEventListener("submit", handleSubmit);
         window.onscroll = function () {
             myFunction()
         };
         var header = document.getElementById("header");
-
         function myFunction() {
             if (window.pageYOffset > 250) {
                 header.classList.add("sticky");
-            }else {
+            } else {
                 header.classList.remove("sticky");
             }
         }
+        /*const handleSubmit = (e) => {
+            e.preventDefault();
+            if (document.getElementById('contactname').value !== '' && document.getElementById('contactemail')
+                .value !== '' && document.getElementById('contactmsg').value !== '') {
+                let myForm = document.getElementById('contact-form');
+                let formData = new FormData(myForm)
+                fetch('/', {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    },
+                    body: new URLSearchParams(formData).toString()
+                }).then(() => console.log('Form successfully submitted')).catch((error) =>
+                    alert(error))
+                myForm.action =  "./success.html";
+            }
+        }*/
     </script>
 </body>
 
